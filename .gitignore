@@ -1,1 +1,9 @@
 *.pyc
+
+
+.vscode/
+venv/
+__pycache__/
+data/
+
+nohup.out

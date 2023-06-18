@@ -140,7 +140,7 @@ def add_train_args(parser: ArgumentParser):
     # Training arguments
     parser.add_argument('--epochs', type=int, default=30,
                         help='Number of epochs to run')
-    parser.add_argument('--batch_size', type=int, default=50,
+    parser.add_argument('--batch_size', type=int, default=128,
                         help='Batch size')
     parser.add_argument('--warmup_epochs', type=float, default=2.0,
                         help='Number of epochs during which learning rate increases linearly from'
@@ -253,7 +253,6 @@ def modify_train_args(args: Namespace):
             for key, value in config.items():
                 setattr(args, key, value)
 
-    assert args.data_path is not None
     assert args.dataset_type is not None
 
     if args.save_dir is not None:

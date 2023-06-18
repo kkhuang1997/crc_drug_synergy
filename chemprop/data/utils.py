@@ -148,7 +148,7 @@ def get_data(path: str,
                 args=args,
                 features=features_data[i] if features_data is not None else None,
                 use_compound_names=use_compound_names
-            ) for i, line in tqdm(enumerate(lines), total=len(lines))
+            ) for i, line in tqdm(enumerate(lines), total=len(lines), desc="load {} data...".format(path))
         ])
 
     # Filter out invalid SMILES
